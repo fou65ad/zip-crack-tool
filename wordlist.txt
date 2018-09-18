@@ -1,8 +1,0 @@
-hello
-admin
-passe
-password
-attempt
-pass
-pass123
-admin
