@@ -1,0 +1,83 @@
+
+install libraries :
+
+step 1 : install pip 
+
+sudo apt-get install software-properties-common
+sudo apt-add-repository universe
+sudo apt-get update
+sudo apt-get install python-pip
+
+step 2 : install filetype and  fpdf
+
+pip install filetype
+
+pip install fpdf
+
+help :
+
+for help :
+command ~$: python -h
+command ~$: python --help
+
+for samples :
+command ~$: python -s
+command ~$: python --samples
+
+tests :
+ 
+TEST OF ATTACKS 
+
+1- make a folder "protected"
+
+command ~$: makedir protected 
+
+2- fill it with files and directories
+
+3- zip it with "zip" command
+
+command ~$: zip --encrypt -r prot.zip protected/
+command ~$: enter password : fifo
+command ~$: verify password : fifo
+
+NOTE: i have already created the protected.zip file with password "fifo" cntained in  wordlist2.txt not  wordlist.txt
+
+4- attack the zip file with wordlist.txt or wordlist2.txt
+
+command ~$: python tool.py -z  prot.zip -d wordlist.txt
+
+generate report add "-r" or "--report" 
+
+command ~$: python tool.py -z  prot.zip -d wordlist.txt -r
+
+saving the report at "/home/fof/Documents" using "-o"
+
+command ~$: python tool.py -z  prot.zip -d wordlist.txt -ro /home/fof/Documents
+
+TESTS OF HASHES 
+
+-listing the tee of the current directory
+command ~$: python tool.py
+
+-extracting the result at the current working directory
+command ~$: python tool.py -e
+
+-listing the tee of the "/home/fof/Desktop/tool/protected" directory
+command ~$: python tool.py -F /home/fof/Desktop/tool/protected
+
+-listing the tee of the "/home/fof/Desktop/tool/protected" and generating sha1 and md5 haches of all files contained in the 
+"/home/fof/Desktop/tool/protected" directory and exporting the result at the current working directory in pdf format
+
+command ~$: python tool.py -F /home/fof/Desktop/tool/protected -e
+
+-exporting the resut at "/root/Desktop" directory
+
+command ~$: python tool.py -F /home/fof/Desktop/tool/protected -e -o  "/home/fof/Desktop"
+
+for help :
+command ~$: python tool.py -h
+for samples :
+command ~$: python tool.py -s
+
+
+
